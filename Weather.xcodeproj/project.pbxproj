@@ -18,6 +18,7 @@
 		70F0EACB27DD1A6C00658FA1 /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F0EAC927DD1A6C00658FA1 /* SearchVC.xib */; };
 		70F0EACE27DD1B9300658FA1 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EACD27DD1B9300658FA1 /* UIViewController+.swift */; };
 		70F0EAD027DD211200658FA1 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EACF27DD211200658FA1 /* SearchVM.swift */; };
+		70F0EAD227DD25AA00658FA1 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAD127DD25AA00658FA1 /* SearchResultModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		70F0EAC927DD1A6C00658FA1 /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
 		70F0EACD27DD1B9300658FA1 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		70F0EACF27DD211200658FA1 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
+		70F0EAD127DD25AA00658FA1 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				70F0EAC827DD1A6C00658FA1 /* SearchVC.swift */,
+				70F0EAD127DD25AA00658FA1 /* SearchResultModel.swift */,
 				70F0EACF27DD211200658FA1 /* SearchVM.swift */,
 				70F0EAC927DD1A6C00658FA1 /* SearchVC.xib */,
 			);
@@ -226,6 +229,7 @@
 				70F0EAD027DD211200658FA1 /* SearchVM.swift in Sources */,
 				70F0EACA27DD1A6C00658FA1 /* SearchVC.swift in Sources */,
 				70F0EAC027DD00B300658FA1 /* WeatherAPI.swift in Sources */,
+				70F0EAD227DD25AA00658FA1 /* SearchResultModel.swift in Sources */,
 				70F0EACE27DD1B9300658FA1 /* UIViewController+.swift in Sources */,
 				700B41AC27DCB23800388ACB /* AppDelegate.swift in Sources */,
 				70F0EAC327DD00FC00658FA1 /* Protocols.swift in Sources */,

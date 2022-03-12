@@ -8,7 +8,7 @@
 import Foundation
 
 class SearchVM {
-    var searchResultList: [String]? {
+    var searchResultList: [SearchResultModel]? {
         didSet {
             self.reloadUI()
         }
@@ -17,10 +17,21 @@ class SearchVM {
     var reloadUI: () -> Void = { }
     
     func performSearch(text: String) {
-        print(text)
         // Make API call
-        
-        // Populate searchResultList variable
+        WeatherAPI.provider.request(.seachText(text: text)) {
+            [weak self] result in
+            switch result{
+            case .success(let response):
+                let decoder = JSONDecoder()
+                // Populating searchResultList variable
+                self?.searchResultList = try? decoder.decode(
+                    [SearchResultModel].self,
+                    from: response.data
+                )
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }
