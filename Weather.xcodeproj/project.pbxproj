@@ -8,25 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		700B41AC27DCB23800388ACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700B41AB27DCB23800388ACB /* AppDelegate.swift */; };
-		700B41B027DCB23800388ACB /* SearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700B41AF27DCB23800388ACB /* SearchListController.swift */; };
 		700B41B527DCB23A00388ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700B41B427DCB23A00388ACB /* Assets.xcassets */; };
 		700B41B827DCB23A00388ACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700B41B627DCB23A00388ACB /* LaunchScreen.storyboard */; };
 		70F0EAB827DCFF7000658FA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F0EAB727DCFF7000658FA1 /* Main.storyboard */; };
 		70F0EAC027DD00B300658FA1 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EABF27DD00B300658FA1 /* WeatherAPI.swift */; };
 		70F0EAC327DD00FC00658FA1 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAC227DD00FC00658FA1 /* Protocols.swift */; };
 		70F0EAC727DD0DA300658FA1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 70F0EAC627DD0DA300658FA1 /* Moya */; };
+		70F0EACA27DD1A6C00658FA1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAC827DD1A6C00658FA1 /* SearchVC.swift */; };
+		70F0EACB27DD1A6C00658FA1 /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F0EAC927DD1A6C00658FA1 /* SearchVC.xib */; };
+		70F0EACE27DD1B9300658FA1 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EACD27DD1B9300658FA1 /* UIViewController+.swift */; };
+		70F0EAD027DD211200658FA1 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EACF27DD211200658FA1 /* SearchVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		700B41A827DCB23800388ACB /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		700B41AB27DCB23800388ACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		700B41AF27DCB23800388ACB /* SearchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListController.swift; sourceTree = "<group>"; };
 		700B41B427DCB23A00388ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		700B41B727DCB23A00388ACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		700B41B927DCB23A00388ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F0EAB727DCFF7000658FA1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		70F0EABF27DD00B300658FA1 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		70F0EAC227DD00FC00658FA1 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		70F0EAC827DD1A6C00658FA1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		70F0EAC927DD1A6C00658FA1 /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
+		70F0EACD27DD1B9300658FA1 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		70F0EACF27DD211200658FA1 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		70F0EABC27DD005600658FA1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				70F0EACC27DD1B7C00658FA1 /* Extensions */,
 				70F0EAC127DD00E200658FA1 /* Protocols */,
 			);
 			path = Utility;
@@ -115,7 +122,9 @@
 		70F0EABE27DD007300658FA1 /* Weather Search */ = {
 			isa = PBXGroup;
 			children = (
-				700B41AF27DCB23800388ACB /* SearchListController.swift */,
+				70F0EAC827DD1A6C00658FA1 /* SearchVC.swift */,
+				70F0EACF27DD211200658FA1 /* SearchVM.swift */,
+				70F0EAC927DD1A6C00658FA1 /* SearchVC.xib */,
 			);
 			path = "Weather Search";
 			sourceTree = "<group>";
@@ -126,6 +135,14 @@
 				70F0EAC227DD00FC00658FA1 /* Protocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		70F0EACC27DD1B7C00658FA1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				70F0EACD27DD1B9300658FA1 /* UIViewController+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F0EACB27DD1A6C00658FA1 /* SearchVC.xib in Resources */,
 				70F0EAB827DCFF7000658FA1 /* Main.storyboard in Resources */,
 				700B41B827DCB23A00388ACB /* LaunchScreen.storyboard in Resources */,
 				700B41B527DCB23A00388ACB /* Assets.xcassets in Resources */,
@@ -205,8 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F0EAD027DD211200658FA1 /* SearchVM.swift in Sources */,
+				70F0EACA27DD1A6C00658FA1 /* SearchVC.swift in Sources */,
 				70F0EAC027DD00B300658FA1 /* WeatherAPI.swift in Sources */,
-				700B41B027DCB23800388ACB /* SearchListController.swift in Sources */,
+				70F0EACE27DD1B9300658FA1 /* UIViewController+.swift in Sources */,
 				700B41AC27DCB23800388ACB /* AppDelegate.swift in Sources */,
 				70F0EAC327DD00FC00658FA1 /* Protocols.swift in Sources */,
 			);

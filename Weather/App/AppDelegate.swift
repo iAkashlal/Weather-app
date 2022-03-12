@@ -23,10 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainNavigationVC = UINavigationController()
         window?.rootViewController = mainNavigationVC
         
+        let searchVC = SearchVC.loadFromNib()
+        mainNavigationVC.setViewControllers([searchVC], animated: true)
+        
         return true
     }
 
 
 }
-
-    
