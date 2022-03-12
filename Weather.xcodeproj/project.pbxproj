@@ -14,6 +14,7 @@
 		70F0EAB827DCFF7000658FA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F0EAB727DCFF7000658FA1 /* Main.storyboard */; };
 		70F0EAC027DD00B300658FA1 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EABF27DD00B300658FA1 /* WeatherAPI.swift */; };
 		70F0EAC327DD00FC00658FA1 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAC227DD00FC00658FA1 /* Protocols.swift */; };
+		70F0EAC727DD0DA300658FA1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 70F0EAC627DD0DA300658FA1 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F0EAC727DD0DA300658FA1 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +144,9 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				70F0EAC627DD0DA300658FA1 /* Moya */,
+			);
 			productName = Weather;
 			productReference = 700B41A827DCB23800388ACB /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 700B419F27DCB23800388ACB;
+			packageReferences = (
+				70F0EAC527DD0DA300658FA1 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 700B41A927DCB23800388ACB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -414,6 +422,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70F0EAC527DD0DA300658FA1 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70F0EAC627DD0DA300658FA1 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70F0EAC527DD0DA300658FA1 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 700B41A027DCB23800388ACB /* Project object */;
 }
