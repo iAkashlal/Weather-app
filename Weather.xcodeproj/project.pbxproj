@@ -40,6 +40,7 @@
 		70F6C8D627DE12C700A1BCEC /* Sy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8CF27DE12C700A1BCEC /* Sy.swift */; };
 		70F6C8D827DE468400A1BCEC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8D727DE468400A1BCEC /* Coordinator.swift */; };
 		70F6C8DA27DE476500A1BCEC /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8D927DE476500A1BCEC /* RootCoordinator.swift */; };
+		70F6C8DE27DE5E9600A1BCEC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 70F6C8DD27DE5E9600A1BCEC /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F6C8DE27DE5E9600A1BCEC /* SDWebImage in Frameworks */,
 				70F6C8B927DDE9AD00A1BCEC /* SkeletonView in Frameworks */,
 				70F0EAC727DD0DA300658FA1 /* Moya in Frameworks */,
 			);
@@ -277,6 +279,7 @@
 			packageProductDependencies = (
 				70F0EAC627DD0DA300658FA1 /* Moya */,
 				70F6C8B827DDE9AD00A1BCEC /* SkeletonView */,
+				70F6C8DD27DE5E9600A1BCEC /* SDWebImage */,
 			);
 			productName = Weather;
 			productReference = 700B41A827DCB23800388ACB /* Weather.app */;
@@ -309,6 +312,7 @@
 			packageReferences = (
 				70F0EAC527DD0DA300658FA1 /* XCRemoteSwiftPackageReference "Moya" */,
 				70F6C8B727DDE9AD00A1BCEC /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				70F6C8DC27DE5E9600A1BCEC /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 700B41A927DCB23800388ACB /* Products */;
 			projectDirPath = "";
@@ -596,6 +600,14 @@
 				minimumVersion = 1.7.0;
 			};
 		};
+		70F6C8DC27DE5E9600A1BCEC /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -608,6 +620,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70F6C8B727DDE9AD00A1BCEC /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		70F6C8DD27DE5E9600A1BCEC /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70F6C8DC27DE5E9600A1BCEC /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
