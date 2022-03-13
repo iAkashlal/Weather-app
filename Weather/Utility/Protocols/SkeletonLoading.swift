@@ -8,7 +8,7 @@
 import UIKit
 import SkeletonView
 
-protocol SkeletonLoading: UIView {
+protocol SkeletonLoading {
     /// Outlet collection for all preview views
     var skeletableViews: [UIView] { get }
 

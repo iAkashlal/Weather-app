@@ -30,13 +30,41 @@ class WeatherDetailVC: UIViewController {
 }
 
 extension WeatherDetailVC: WeatherDetailVMDelegate {
-    func weatherLoaded() {
-        self.cityLabel.text = viewModel.cityLabel
-//        self.weatherIcon.image = viewModel.weatherIcon
-        self.temperatureText.text = viewModel.temperatureText
-        self.feelsLikeText.text = viewModel.feelsLikeText
-        self.weatherTitle.text = viewModel.weatherTitle
-        self.weatherSubtitle.text = viewModel.weatherSubtitle
+    func startLoading() {
+        self.startSkeletonLoading()
     }
+    
+    func stopLoading() {
+        self.stopSkeletonLoading()
+    }
+    
+    func weatherLoaded() {
+        guard let weather = viewModel.weatherData else { return }
+        self.cityLabel.text = weather.name
+//        self.weatherIcon.image = viewModel.weatherIcon
+        self.temperatureText.text = "\(weather.main?.temp)"
+        self.feelsLikeText.text = "\(weather.main?.feelsLike)"
+        self.weatherTitle.text = weather.weather?.first?.main
+        self.weatherSubtitle.text = weather.weather?.first?.descriptionField
+    }
+    
+}
+
+extension WeatherDetailVC: SkeletonLoading {
+    var skeletableViews: [UIView] {
+        [
+            cityLabel,
+            weatherIcon,
+            temperatureText,
+            feelsLikeText,
+            weatherTitle,
+            weatherSubtitle
+        ]
+    }
+    
+    func updateSkeletonDesign(isEnding: Bool) {
+        return
+    }
+    
     
 }

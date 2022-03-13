@@ -8,19 +8,16 @@
 import Foundation
 
 protocol WeatherDetailVMDelegate {
+    func startLoading()
     func weatherLoaded()
+    func stopLoading()
 }
 
 class WeatherDetailVM {
     
     var delegate: WeatherDetailVMDelegate?
     
-    var cityLabel: String?
-    var weatherIcon: String?
-    var temperatureText: String?
-    var feelsLikeText: String?
-    var weatherTitle: String?
-    var weatherSubtitle: String?
+    var weatherData: WeatherData?
     
     var location: SearchResultModel? {
         didSet {
@@ -29,9 +26,26 @@ class WeatherDetailVM {
     }
     
     func fetchWeather() {
+        delegate?.startLoading()
         // API call to fetch weather
-        
-        // Once API fetches weather, call
-//        self.delegate?.weatherLoaded()
+        WeatherAPI.provider.request(
+            .weatherFor(
+                lat: location?.lat ?? 0.0,
+                long: location?.lon ?? 0.0
+            )
+        ) { [weak self] result in
+            switch result{
+            case .success(let response):
+                let decoder = JSONDecoder()
+                self?.weatherData = try? decoder.decode(
+                    WeatherData.self,
+                    from: response.data
+                )
+                self?.delegate?.weatherLoaded()
+                self?.delegate?.stopLoading()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
