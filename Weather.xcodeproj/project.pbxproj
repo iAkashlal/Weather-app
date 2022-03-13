@@ -28,6 +28,9 @@
 		70F6C8BB27DDEA4500A1BCEC /* SkeletonLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8BA27DDEA4500A1BCEC /* SkeletonLoading.swift */; };
 		70F6C8BE27DDF80600A1BCEC /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8BD27DDF80600A1BCEC /* EmptyStateView.swift */; };
 		70F6C8C027DDF91300A1BCEC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8BF27DDF91300A1BCEC /* Image.swift */; };
+		70F6C8C427DE05E000A1BCEC /* WeatherDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8C227DE05E000A1BCEC /* WeatherDetailVC.swift */; };
+		70F6C8C527DE05E000A1BCEC /* WeatherDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F6C8C327DE05E000A1BCEC /* WeatherDetailVC.xib */; };
+		70F6C8C727DE07E100A1BCEC /* WeatherDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8C627DE07E100A1BCEC /* WeatherDetailVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		70F6C8BA27DDEA4500A1BCEC /* SkeletonLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoading.swift; sourceTree = "<group>"; };
 		70F6C8BD27DDF80600A1BCEC /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		70F6C8BF27DDF91300A1BCEC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		70F6C8C227DE05E000A1BCEC /* WeatherDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailVC.swift; sourceTree = "<group>"; };
+		70F6C8C327DE05E000A1BCEC /* WeatherDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherDetailVC.xib; sourceTree = "<group>"; };
+		70F6C8C627DE07E100A1BCEC /* WeatherDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 		70F0EAB927DD003900658FA1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				70F6C8C127DE05C800A1BCEC /* Weather Detail */,
 				70F0EABE27DD007300658FA1 /* Weather Search */,
 			);
 			path = Modules;
@@ -206,6 +213,16 @@
 			path = "Shared Components";
 			sourceTree = "<group>";
 		};
+		70F6C8C127DE05C800A1BCEC /* Weather Detail */ = {
+			isa = PBXGroup;
+			children = (
+				70F6C8C227DE05E000A1BCEC /* WeatherDetailVC.swift */,
+				70F6C8C627DE07E100A1BCEC /* WeatherDetailVM.swift */,
+				70F6C8C327DE05E000A1BCEC /* WeatherDetailVC.xib */,
+			);
+			path = "Weather Detail";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,6 +291,7 @@
 			files = (
 				70F0EACB27DD1A6C00658FA1 /* SearchVC.xib in Resources */,
 				70F0EAB827DCFF7000658FA1 /* Main.storyboard in Resources */,
+				70F6C8C527DE05E000A1BCEC /* WeatherDetailVC.xib in Resources */,
 				700B41B827DCB23A00388ACB /* LaunchScreen.storyboard in Resources */,
 				700B41B527DCB23A00388ACB /* Assets.xcassets in Resources */,
 				70F0EADD27DDBD7500658FA1 /* SearchListTVC.xib in Resources */,
@@ -293,11 +311,13 @@
 				70F0EAE227DDCA7900658FA1 /* UITableView+.swift in Sources */,
 				70F0EAE427DDCAD900658FA1 /* ReusableView.swift in Sources */,
 				70F6C8BE27DDF80600A1BCEC /* EmptyStateView.swift in Sources */,
+				70F6C8C727DE07E100A1BCEC /* WeatherDetailVM.swift in Sources */,
 				70F0EAD227DD25AA00658FA1 /* SearchResultModel.swift in Sources */,
 				70F6C8C027DDF91300A1BCEC /* Image.swift in Sources */,
 				70F0EACE27DD1B9300658FA1 /* UIViewController+.swift in Sources */,
 				70F6C8BB27DDEA4500A1BCEC /* SkeletonLoading.swift in Sources */,
 				70F0EADC27DDBD7500658FA1 /* SearchListTVC.swift in Sources */,
+				70F6C8C427DE05E000A1BCEC /* WeatherDetailVC.swift in Sources */,
 				700B41AC27DCB23800388ACB /* AppDelegate.swift in Sources */,
 				70F0EAC327DD00FC00658FA1 /* Protocols.swift in Sources */,
 				70F0EAE027DDC11700658FA1 /* Color.swift in Sources */,

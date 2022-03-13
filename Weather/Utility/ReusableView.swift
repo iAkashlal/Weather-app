@@ -2,7 +2,7 @@
 //  ReusableView.swift
 //  Weather
 //
-//  Created by akashial on 13/03/22.
+//  Created by akashlal on 13/03/22.
 //
 
 import UIKit
