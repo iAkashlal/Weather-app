@@ -38,6 +38,8 @@
 		70F6C8D427DE12C700A1BCEC /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8CD27DE12C700A1BCEC /* Wind.swift */; };
 		70F6C8D527DE12C700A1BCEC /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8CE27DE12C700A1BCEC /* Cloud.swift */; };
 		70F6C8D627DE12C700A1BCEC /* Sy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8CF27DE12C700A1BCEC /* Sy.swift */; };
+		70F6C8D827DE468400A1BCEC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8D727DE468400A1BCEC /* Coordinator.swift */; };
+		70F6C8DA27DE476500A1BCEC /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8D927DE476500A1BCEC /* RootCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		70F6C8CD27DE12C700A1BCEC /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
 		70F6C8CE27DE12C700A1BCEC /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		70F6C8CF27DE12C700A1BCEC /* Sy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sy.swift; sourceTree = "<group>"; };
+		70F6C8D727DE468400A1BCEC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		70F6C8D927DE476500A1BCEC /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		70F0EAB927DD003900658FA1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				70F6C8D927DE476500A1BCEC /* RootCoordinator.swift */,
 				70F6C8C127DE05C800A1BCEC /* Weather Detail */,
 				70F0EABE27DD007300658FA1 /* Weather Search */,
 			);
@@ -181,6 +186,7 @@
 			children = (
 				70F0EAC227DD00FC00658FA1 /* Protocols.swift */,
 				70F6C8BA27DDEA4500A1BCEC /* SkeletonLoading.swift */,
+				70F6C8D727DE468400A1BCEC /* Coordinator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -336,12 +342,14 @@
 			files = (
 				70F6C8D227DE12C700A1BCEC /* WeatherData.swift in Sources */,
 				70F6C8D127DE12C700A1BCEC /* Main.swift in Sources */,
+				70F6C8DA27DE476500A1BCEC /* RootCoordinator.swift in Sources */,
 				70F6C8D427DE12C700A1BCEC /* Wind.swift in Sources */,
 				70F0EAD027DD211200658FA1 /* SearchVM.swift in Sources */,
 				70F0EACA27DD1A6C00658FA1 /* SearchVC.swift in Sources */,
 				70F6C8D327DE12C700A1BCEC /* Weather.swift in Sources */,
 				70F0EAC027DD00B300658FA1 /* WeatherAPI.swift in Sources */,
 				70F0EAE227DDCA7900658FA1 /* UITableView+.swift in Sources */,
+				70F6C8D827DE468400A1BCEC /* Coordinator.swift in Sources */,
 				70F0EAE427DDCAD900658FA1 /* ReusableView.swift in Sources */,
 				70F6C8BE27DDF80600A1BCEC /* EmptyStateView.swift in Sources */,
 				70F6C8C727DE07E100A1BCEC /* WeatherDetailVM.swift in Sources */,
