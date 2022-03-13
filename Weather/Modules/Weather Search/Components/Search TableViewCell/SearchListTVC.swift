@@ -27,6 +27,14 @@ class SearchListTVC: UITableViewCell {
     func configure(for location: SearchResultModel) {
         self.location = location
         setupLabels()
+        stopSkeletonLoading()
+    }
+    
+    func configureAsLoadingCell() {
+        self.cityTitle.text = "Loading City.."
+        self.citySubtitle.text = "Loading Country.."
+        startSkeletonLoading()
+        self.location = nil
     }
     
     private func setupLabels() {
@@ -43,13 +51,26 @@ class SearchListTVC: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.cityTitle.text = nil
-        self.citySubtitle.text = nil
-        self.location = nil
+        self.configureAsLoadingCell()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+}
+
+extension SearchListTVC: SkeletonLoading {
+    var skeletableViews: [UIView] {
+        return [
+            cityTitle,
+            citySubtitle
+        ]
+    }
+    
+    func updateSkeletonDesign(isEnding: Bool) {
+        return
+    }
+    
     
 }

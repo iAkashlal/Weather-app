@@ -8,15 +8,17 @@
 import Foundation
 
 class SearchVM {
-    var searchResultList: [SearchResultModel]? {
+    var searchResultList: [SearchResultModel]?
+    
+    var reloadUI: () -> Void = { }
+    var isLoading: Bool = false {
         didSet {
             self.reloadUI()
         }
     }
     
-    var reloadUI: () -> Void = { }
-    
     func performSearch(text: String) {
+        isLoading = true
         // Make API call
         WeatherAPI.provider.request(.seachText(text: text)) {
             [weak self] result in
@@ -28,6 +30,7 @@ class SearchVM {
                     [SearchResultModel].self,
                     from: response.data
                 )
+                self?.isLoading = false
             case .failure(let error):
                 print(error)
             }
