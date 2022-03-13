@@ -43,22 +43,34 @@ extension SearchVC: UISearchBarDelegate {
 
 extension SearchVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchTableView.deselectRow(at: indexPath, animated: true)
+        if viewModel.isLoading {
+            return
+        }
         if let location = viewModel.searchResultList?[indexPath.row] {
             print("location with lat\(location.lat) and long \(location.lon) tapped" )
         }
-        searchTableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension SearchVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.searchResultList?.count ?? 0
+        if viewModel.isLoading {
+            return 3
+        }
+        else {
+            return viewModel.searchResultList?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SearchListTVC = searchTableView.dequeueReusableCell(forIndexPath: indexPath)
-        if let location = viewModel.searchResultList?[indexPath.row] {
-            cell.configure(for: location)
+        if viewModel.isLoading {
+            cell.configureAsLoadingCell()
+        } else {
+            if let location = viewModel.searchResultList?[indexPath.row] {
+                cell.configure(for: location)
+            }
         }
         return cell
     }
