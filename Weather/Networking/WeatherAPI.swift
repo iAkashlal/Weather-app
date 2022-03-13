@@ -23,6 +23,7 @@ enum WeatherAPI {
     )
     
     case seachText(text: String)
+    case weatherFor(lat: Double, long: Double)
 }
 
 extension WeatherAPI: TargetType {
@@ -35,18 +36,31 @@ extension WeatherAPI: TargetType {
         switch self {
         case .seachText:
             return "geo/1.0/direct"
+        case .weatherFor:
+            return "data/2.5/weather"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .seachText:
+        case .seachText, .weatherFor:
             return .get
         }
     }
     
     var task: Task {
         switch self {
+        case let .weatherFor(lat, long):
+            let payload = [
+                "lat": "\(lat)",
+                "lon": "\(long)",
+                "units": "metric",
+                "appid": OpenWeather.apiKey
+            ]
+            return .requestParameters(
+                parameters: payload,
+                encoding: URLEncoding.default
+            )
         case let .seachText(locationText):
             let payload = [
                 "q": locationText.replacingOccurrences(of: " ", with: ""),
