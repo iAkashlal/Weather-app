@@ -46,6 +46,7 @@ extension SearchVC: UITableViewDelegate {
         if let location = viewModel.searchResultList?[indexPath.row] {
             print("location with lat\(location.lat) and long \(location.lon) tapped" )
         }
+        searchTableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
