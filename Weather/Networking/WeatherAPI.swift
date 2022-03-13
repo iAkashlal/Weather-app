@@ -50,7 +50,7 @@ extension WeatherAPI: TargetType {
         case let .seachText(locationText):
             let payload = [
                 "q": locationText.replacingOccurrences(of: " ", with: ""),
-                "limit": "15",
+                "limit": "9",
                 "appid": OpenWeather.apiKey
             ]
             return .requestParameters(

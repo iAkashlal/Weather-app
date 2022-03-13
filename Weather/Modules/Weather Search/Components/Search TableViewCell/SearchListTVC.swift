@@ -31,7 +31,21 @@ class SearchListTVC: UITableViewCell {
     
     private func setupLabels() {
         cityTitle.text = location?.name
-        citySubtitle.text = (location?.state ?? "") + ", " + (location?.country ?? "")
+        let state = location?.state ?? ""
+        let country = location?.country ?? ""
+        citySubtitle.text = state
+        if state.isEmpty {
+            citySubtitle.text = country
+        } else {
+            citySubtitle.text = state + ", " + country
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.cityTitle.text = nil
+        self.citySubtitle.text = nil
+        self.location = nil
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
