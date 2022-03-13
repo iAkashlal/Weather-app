@@ -20,10 +20,10 @@ class WeatherDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     func setLocation(with location: SearchResultModel) {
+        self.viewModel.delegate = self
         self.viewModel.location = location
     }
     
@@ -42,17 +42,20 @@ extension WeatherDetailVC: WeatherDetailVMDelegate {
         guard let weather = viewModel.weatherData else { return }
         self.cityLabel.text = weather.name
 //        self.weatherIcon.image = viewModel.weatherIcon
-        self.temperatureText.text = "\(weather.main?.temp)"
-        self.feelsLikeText.text = "\(weather.main?.feelsLike)"
         self.weatherTitle.text = weather.weather?.first?.main
-        self.weatherSubtitle.text = weather.weather?.first?.descriptionField
+        self.weatherSubtitle.text = weather.weather?.first?.description
+        guard let temperature = weather.main?.temp,
+              let feelsLike = weather.main?.feelsLike else { return }
+        self.temperatureText.text = String(describing: temperature) + " °C"
+        self.feelsLikeText.text = "Feels like " + String(describing: feelsLike) + " °C"
+        
     }
     
 }
 
 extension WeatherDetailVC: SkeletonLoading {
     var skeletableViews: [UIView] {
-        [
+        return [
             cityLabel,
             weatherIcon,
             temperatureText,

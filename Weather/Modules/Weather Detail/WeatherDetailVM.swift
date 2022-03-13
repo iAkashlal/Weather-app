@@ -26,7 +26,7 @@ class WeatherDetailVM {
     }
     
     func fetchWeather() {
-        delegate?.startLoading()
+        self.delegate?.startLoading()
         // API call to fetch weather
         WeatherAPI.provider.request(
             .weatherFor(
@@ -37,6 +37,7 @@ class WeatherDetailVM {
             switch result{
             case .success(let response):
                 let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 self?.weatherData = try? decoder.decode(
                     WeatherData.self,
                     from: response.data

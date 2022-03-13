@@ -82,7 +82,9 @@ extension SearchVC: UITableViewDelegate {
             return
         }
         if let location = viewModel.searchResultList?[indexPath.row] {
-            print("location with lat\(location.lat) and long \(location.lon) tapped" )
+            let detailVC = WeatherDetailVC.loadFromNib()
+            detailVC.setLocation(with: location)
+            self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
 }
