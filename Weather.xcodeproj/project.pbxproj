@@ -26,6 +26,8 @@
 		70F0EAE427DDCAD900658FA1 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAE327DDCAD900658FA1 /* ReusableView.swift */; };
 		70F6C8B927DDE9AD00A1BCEC /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 70F6C8B827DDE9AD00A1BCEC /* SkeletonView */; };
 		70F6C8BB27DDEA4500A1BCEC /* SkeletonLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8BA27DDEA4500A1BCEC /* SkeletonLoading.swift */; };
+		70F6C8BE27DDF80600A1BCEC /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8BD27DDF80600A1BCEC /* EmptyStateView.swift */; };
+		70F6C8C027DDF91300A1BCEC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8BF27DDF91300A1BCEC /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		70F0EAE127DDCA7900658FA1 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		70F0EAE327DDCAD900658FA1 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		70F6C8BA27DDEA4500A1BCEC /* SkeletonLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoading.swift; sourceTree = "<group>"; };
+		70F6C8BD27DDF80600A1BCEC /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		70F6C8BF27DDF91300A1BCEC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				700B41B427DCB23A00388ACB /* Assets.xcassets */,
 				700B41B927DCB23A00388ACB /* Info.plist */,
 				70F0EADF27DDC11700658FA1 /* Color.swift */,
+				70F6C8BF27DDF91300A1BCEC /* Image.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 		70F0EABC27DD005600658FA1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				70F6C8BC27DDF7F200A1BCEC /* Shared Components */,
 				70F0EAE327DDCAD900658FA1 /* ReusableView.swift */,
 				70F0EACC27DD1B7C00658FA1 /* Extensions */,
 				70F0EAC127DD00E200658FA1 /* Protocols */,
@@ -190,6 +196,14 @@
 				70F0EAD127DD25AA00658FA1 /* SearchResultModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		70F6C8BC27DDF7F200A1BCEC /* Shared Components */ = {
+			isa = PBXGroup;
+			children = (
+				70F6C8BD27DDF80600A1BCEC /* EmptyStateView.swift */,
+			);
+			path = "Shared Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +292,9 @@
 				70F0EAC027DD00B300658FA1 /* WeatherAPI.swift in Sources */,
 				70F0EAE227DDCA7900658FA1 /* UITableView+.swift in Sources */,
 				70F0EAE427DDCAD900658FA1 /* ReusableView.swift in Sources */,
+				70F6C8BE27DDF80600A1BCEC /* EmptyStateView.swift in Sources */,
 				70F0EAD227DD25AA00658FA1 /* SearchResultModel.swift in Sources */,
+				70F6C8C027DDF91300A1BCEC /* Image.swift in Sources */,
 				70F0EACE27DD1B9300658FA1 /* UIViewController+.swift in Sources */,
 				70F6C8BB27DDEA4500A1BCEC /* SkeletonLoading.swift in Sources */,
 				70F0EADC27DDBD7500658FA1 /* SearchListTVC.swift in Sources */,

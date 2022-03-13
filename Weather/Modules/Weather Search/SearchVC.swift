@@ -26,8 +26,42 @@ class SearchVC: UIViewController {
         searchTableView.register(nib: SearchListTVC.self)
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        
+        let backgroundView = EmptyStateView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: searchTableView.frame.width,
+                height: searchTableView.frame.height
+            )
+        )
+        
+        backgroundView.delegate = self
+        searchTableView.backgroundView = backgroundView
+        searchTableView.backgroundView?.isUserInteractionEnabled = true
+        searchTableView.backgroundView?.isHidden = false
+        backgroundView.configure(
+            titleText: "Nothing to show",
+            subtitleText: "Please enter a search term to fetch list of places",
+            buttonText: "Go Random")
         viewModel.reloadUI = { [weak self] in
             self?.searchTableView.reloadData()
+            let emptyResultsViewIsHidden = !((self?.viewModel.searchResultList?.count ?? 0) == 0)
+            self?.searchTableView.backgroundView?.isHidden = emptyResultsViewIsHidden
+            if !emptyResultsViewIsHidden {
+                switch self?.searchBar.text?.isEmpty {
+                case true:
+                    backgroundView.configure(
+                        titleText: "Nothing to show",
+                        subtitleText: "Please enter a search term to fetch list of places",
+                        buttonText: "Go Random")
+                default:
+                    backgroundView.configure(
+                        titleText: "No results found",
+                        subtitleText: "Please enter a different search term",
+                        buttonText: "Go Random")
+                }
+            }
         }
     }
 
@@ -75,5 +109,19 @@ extension SearchVC: UITableViewDataSource {
         return cell
     }
     
+    
+}
+
+extension SearchVC: EmptyStateDelegate {
+    func buttonDidTap(_ sender: UIButton) {
+        print("Show all Tapped")
+        self.searchBar.text = randomString()
+        viewModel.performSearch(text: searchBar.text ?? "")
+    }
+    
+    func randomString(length: Int = 1) -> String {
+      let letters = "ABCDEFGHIJKLuNOPQRSTUVWXYZ"
+      return String((0..<length).map{ _ in letters.randomElement()! })
+    }
     
 }
