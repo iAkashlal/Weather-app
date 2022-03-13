@@ -28,6 +28,8 @@ class SearchVC: UIViewController {
         searchTableView.dataSource = self
         viewModel.reloadUI = { [weak self] in
             self?.searchTableView.reloadData()
+            let emptyResultsViewIsHidden = !((self?.viewModel.searchResultList?.count ?? 0) == 0)
+            self?.searchTableView.backgroundView?.isHidden = emptyResultsViewIsHidden
         }
     }
 
