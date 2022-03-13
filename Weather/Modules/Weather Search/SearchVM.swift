@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Moya
 
 class SearchVM {
     var searchResultList: [SearchResultModel]?
     
     var reloadUI: () -> Void = { }
+    var requests: [Cancellable]?
     var isLoading: Bool = false {
         didSet {
             self.reloadUI()
@@ -18,9 +20,16 @@ class SearchVM {
     }
     
     func performSearch(text: String) {
+        guard !text.isEmpty else {
+            self.searchResultList?.removeAll()
+            self.reloadUI()
+            return
+        }
         isLoading = true
         // Make API call
-        WeatherAPI.provider.request(.seachText(text: text)) {
+        requests?.forEach({$0.cancel()})
+        requests?.removeAll()
+        let request = WeatherAPI.provider.request(.seachText(text: text)) {
             [weak self] result in
             switch result{
             case .success(let response):
@@ -35,6 +44,7 @@ class SearchVM {
                 print(error)
             }
         }
+        requests?.append(request)
     }
     
 }
