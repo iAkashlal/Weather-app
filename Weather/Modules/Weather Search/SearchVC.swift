@@ -12,6 +12,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchTableView: UITableView! // 1
     
     var viewModel = SearchVM()
+    var coordinator: RootCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,9 +83,7 @@ extension SearchVC: UITableViewDelegate {
             return
         }
         if let location = viewModel.searchResultList?[indexPath.row] {
-            let detailVC = WeatherDetailVC.loadFromNib()
-            detailVC.setLocation(with: location)
-            self.navigationController?.pushViewController(detailVC, animated: true)
+            coordinator?.presentDetailFor(location: location)
         }
     }
 }

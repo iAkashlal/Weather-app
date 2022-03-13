@@ -16,6 +16,7 @@ class WeatherDetailVC: UIViewController {
     @IBOutlet weak var weatherSubtitle: UILabel!
     
     var viewModel = WeatherDetailVM()
+    var coordinator: RootCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
