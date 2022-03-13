@@ -55,7 +55,7 @@ extension WeatherAPI: TargetType {
             ]
             return .requestParameters(
                 parameters: payload,
-                encoding: JSONEncoding.default
+                encoding: URLEncoding.default
             )
         }
     }
