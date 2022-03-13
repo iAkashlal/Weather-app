@@ -24,6 +24,8 @@
 		70F0EAE027DDC11700658FA1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EADF27DDC11700658FA1 /* Color.swift */; };
 		70F0EAE227DDCA7900658FA1 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAE127DDCA7900658FA1 /* UITableView+.swift */; };
 		70F0EAE427DDCAD900658FA1 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAE327DDCAD900658FA1 /* ReusableView.swift */; };
+		70F6C8B927DDE9AD00A1BCEC /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 70F6C8B827DDE9AD00A1BCEC /* SkeletonView */; };
+		70F6C8BB27DDEA4500A1BCEC /* SkeletonLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6C8BA27DDEA4500A1BCEC /* SkeletonLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,7 @@
 		70F0EADF27DDC11700658FA1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		70F0EAE127DDCA7900658FA1 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		70F0EAE327DDCAD900658FA1 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		70F6C8BA27DDEA4500A1BCEC /* SkeletonLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F6C8B927DDE9AD00A1BCEC /* SkeletonView in Frameworks */,
 				70F0EAC727DD0DA300658FA1 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				70F0EAC227DD00FC00658FA1 /* Protocols.swift */,
+				70F6C8BA27DDEA4500A1BCEC /* SkeletonLoading.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			name = Weather;
 			packageProductDependencies = (
 				70F0EAC627DD0DA300658FA1 /* Moya */,
+				70F6C8B827DDE9AD00A1BCEC /* SkeletonView */,
 			);
 			productName = Weather;
 			productReference = 700B41A827DCB23800388ACB /* Weather.app */;
@@ -236,6 +242,7 @@
 			mainGroup = 700B419F27DCB23800388ACB;
 			packageReferences = (
 				70F0EAC527DD0DA300658FA1 /* XCRemoteSwiftPackageReference "Moya" */,
+				70F6C8B727DDE9AD00A1BCEC /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 700B41A927DCB23800388ACB /* Products */;
 			projectDirPath = "";
@@ -273,6 +280,7 @@
 				70F0EAE427DDCAD900658FA1 /* ReusableView.swift in Sources */,
 				70F0EAD227DD25AA00658FA1 /* SearchResultModel.swift in Sources */,
 				70F0EACE27DD1B9300658FA1 /* UIViewController+.swift in Sources */,
+				70F6C8BB27DDEA4500A1BCEC /* SkeletonLoading.swift in Sources */,
 				70F0EADC27DDBD7500658FA1 /* SearchListTVC.swift in Sources */,
 				700B41AC27DCB23800388ACB /* AppDelegate.swift in Sources */,
 				70F0EAC327DD00FC00658FA1 /* Protocols.swift in Sources */,
@@ -500,6 +508,14 @@
 				kind = branch;
 			};
 		};
+		70F6C8B727DDE9AD00A1BCEC /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -507,6 +523,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70F0EAC527DD0DA300658FA1 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		70F6C8B827DDE9AD00A1BCEC /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70F6C8B727DDE9AD00A1BCEC /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
